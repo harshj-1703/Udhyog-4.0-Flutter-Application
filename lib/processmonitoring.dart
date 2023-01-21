@@ -93,7 +93,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                         },
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -116,7 +116,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                       InkWell(
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -139,7 +139,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                       InkWell(
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -174,7 +174,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                         },
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -197,7 +197,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                       InkWell(
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -220,7 +220,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                       InkWell(
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -255,7 +255,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                         },
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -278,7 +278,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                       InkWell(
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -301,7 +301,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                       InkWell(
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -336,7 +336,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                         },
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -359,7 +359,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                       InkWell(
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
@@ -382,7 +382,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                       InkWell(
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 45,
+                          radius: 48,
                           child: Image.asset(
                             'assets/images/d1.png',
                             height: 70,
