@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(5, 35, 5, 0),
+                    padding: EdgeInsets.fromLTRB(5, 20, 5, 0),
                     child: Container(
                       padding: EdgeInsets.fromLTRB(10, 4, 10, 4),
                       child: Row(
