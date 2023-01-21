@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udhyog4/dashboard.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(5, 25, 5, 0),
+                    padding: EdgeInsets.fromLTRB(5, 35, 5, 0),
                     child: Container(
                       padding: EdgeInsets.fromLTRB(10, 4, 10, 4),
                       child: Row(
@@ -32,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             children: [
                               Image.asset(
                                 'assets/images/logo1.png',
-                                height: 80,
+                                height: 85,
                               ),
                             ],
                           ),
@@ -125,7 +126,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      print('login');
+                      Navigator.pushReplacement<void, void>(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) => const Dashboard(),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 24, 112, 0),
