@@ -56,10 +56,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(8, 25, 8, 25),
+              padding: const EdgeInsets.fromLTRB(8, 18, 8, 15),
               child: Text(
                 'Udhyog 4.0 (U4) is a start-up initiation by professionals in 2019, and mainly provides technological solutions related to emerging technologies such as industry 4.0. This is turn transform existing industrial setup into SMART and sustainable manufacturing setup.',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 16),
               ),
             ),
             Padding(
