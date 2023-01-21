@@ -14,7 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
 // Figma Flutter Generator LoginScreen - FRAME
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.grey[400],
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintStyle: TextStyle(
                         color: Colors.grey[800], fontWeight: FontWeight.w400),
                     hintText: "Username",
-                    fillColor: Colors.grey[400]),
+                    fillColor: Colors.grey[300]),
               ),
             ),
             Padding(
@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintStyle: TextStyle(
                         color: Colors.grey[800], fontWeight: FontWeight.w400),
                     hintText: "Password",
-                    fillColor: Colors.grey[400]),
+                    fillColor: Colors.grey[300]),
               ),
             ),
             Padding(

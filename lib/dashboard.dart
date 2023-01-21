@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udhyog4/processmonitoring.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -11,7 +12,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.grey[400],
       body: SingleChildScrollView(
         child: Expanded(
           child: Column(
@@ -60,30 +61,21 @@ class _DashboardState extends State<Dashboard> {
                       padding: EdgeInsets.fromLTRB(10, 4, 10, 4),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'ABC INDUSTRIES',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 21),
-                              )
-                            ],
+                          Text(
+                            'ABC INDUSTRIES',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 21),
                           ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Unit 1 [Rajkot]',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15),
-                              )
-                            ],
+                          Text(
+                            'Unit 1 [Rajkot]',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 15),
                           ),
                         ],
                       ),
@@ -95,7 +87,13 @@ class _DashboardState extends State<Dashboard> {
               ),
               InkWell(
                 onTap: () {
-                  print('1');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) =>
+                          const ProcessMonitoring(),
+                    ),
+                  );
                 },
                 child: Row(
                   children: [
