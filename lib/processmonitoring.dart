@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udhyog4/pm_pattern.dart';
 
 class ProcessMonitoring extends StatefulWidget {
   const ProcessMonitoring({super.key});
@@ -33,7 +34,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                             'Process Monitoring',
                             style: TextStyle(
                                 color: Color.fromARGB(255, 32, 161, 0),
-                                fontSize: 13.5,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -170,7 +171,12 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                     children: [
                       InkWell(
                         onTap: () {
-                          print('1');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (BuildContext context) => PmPattern(),
+                            ),
+                          );
                         },
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
