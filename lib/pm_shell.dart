@@ -109,19 +109,27 @@ class _PmShellState extends State<PmShell> {
                                                     },
                                                     child: Text(
                                                       'Coating',
-                                                      style: TextStyle(
-                                                        letterSpacing: 1.2,
-                                                        decoration:
-                                                            TextDecoration
-                                                                .underline,
-                                                        // decorationStyle:
-                                                        //     TextDecorationStyle
-                                                        //         .wavy,
-                                                        decorationThickness:
-                                                            2.1,
-                                                        color: Colors.white,
-                                                        fontSize: 16,
-                                                      ),
+                                                      style: (setPage == 0)
+                                                          ? TextStyle(
+                                                              letterSpacing:
+                                                                  1.2,
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .underline,
+                                                              // decorationStyle:
+                                                              //     TextDecorationStyle
+                                                              //         .wavy,
+                                                              decorationThickness:
+                                                                  2.1,
+                                                              color:
+                                                                  Colors.white,
+                                                              fontSize: 16,
+                                                            )
+                                                          : TextStyle(
+                                                              color:
+                                                                  Colors.white,
+                                                              fontSize: 16,
+                                                            ),
                                                     )),
                                               ),
                                               SizedBox(
@@ -144,20 +152,27 @@ class _PmShellState extends State<PmShell> {
                                                       setPage = 1;
                                                     });
                                                   },
-                                                  child: Text('Dewaxing',
-                                                      style: TextStyle(
-                                                        letterSpacing: 1.2,
-                                                        // decoration:
-                                                        //     TextDecoration
-                                                        //         .underline,
-                                                        // decorationStyle:
-                                                        //     TextDecorationStyle
-                                                        //         .wavy,
-                                                        decorationThickness:
-                                                            2.1,
-                                                        color: Colors.white,
-                                                        fontSize: 16,
-                                                      )),
+                                                  child: Text(
+                                                    'Dewaxing',
+                                                    style: (setPage == 1)
+                                                        ? TextStyle(
+                                                            letterSpacing: 1.2,
+                                                            decoration:
+                                                                TextDecoration
+                                                                    .underline,
+                                                            // decorationStyle:
+                                                            //     TextDecorationStyle
+                                                            //         .wavy,
+                                                            decorationThickness:
+                                                                2.1,
+                                                            color: Colors.white,
+                                                            fontSize: 16,
+                                                          )
+                                                        : TextStyle(
+                                                            color: Colors.white,
+                                                            fontSize: 16,
+                                                          ),
+                                                  ),
                                                 ),
                                               ),
                                             ],
@@ -181,1378 +196,1919 @@ class _PmShellState extends State<PmShell> {
             ),
           ),
           // Divider(),
-          Overview(),
+          Overview1(),
         ],
       ),
     );
   }
 }
 
-class Overview extends StatefulWidget {
-  const Overview({super.key});
+class Overview1 extends StatefulWidget {
+  const Overview1({super.key});
 
   @override
-  State<Overview> createState() => _OverviewState();
+  State<Overview1> createState() => _Overview1State();
 }
 
-class _OverviewState extends State<Overview> {
+class _Overview1State extends State<Overview1> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: MediaQuery.removePadding(
-        context: context,
-        removeTop: true,
-        child: ListView(
-          padding: EdgeInsets.all(5),
-          children: [
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Press 1',
+    if (setPage == 0) {
+      return Expanded(
+        child: MediaQuery.removePadding(
+          context: context,
+          removeTop: true,
+          child: ListView(
+            padding: EdgeInsets.all(5),
+            children: [
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Primary Coating',
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.w900),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.red[900],
+                            ),
+                            height: 50,
+                            width: 100,
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'JB0302',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Die No',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'M5050',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Part',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'Box Casting',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC Quantity',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '4',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Plate Weight',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '4',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Specific Density',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '3.01',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Operator',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'JSK',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Pending',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'JB0028',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Die No',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'M5034',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Part',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'Bearning Block Rear',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Planned Qauntity',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '352',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(18),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Temprature',
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.w900),
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.red[900],
-                          ),
-                          height: 50,
-                          width: 100,
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'JB0302',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Die No',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'M5050',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Part',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'Box Casting',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Planned Qty',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '4',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Injected Qty',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '4',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Date',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '05-12-2022',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Operator',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'JSK',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Pending',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'PRC',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'JB0028',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Die No',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'M5034',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Part',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'Bearning Block Rear',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Planned Qauntity',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '352',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Press 2',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w900),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.red[900],
-                          ),
-                          height: 50,
-                          width: 100,
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'JB0302',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Die No',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'M5050',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Part',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'Box Casting',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Planned Qty',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '4',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Injected Qty',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '4',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Date',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '05-12-2022',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Operator',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'JSK',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Pending',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'PRC',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'JB0028',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Die No',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'M5034',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Part',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'Bearning Block Rear',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Planned Qauntity',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '352',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Press 3',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w900),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.red[900],
-                          ),
-                          height: 50,
-                          width: 100,
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'JB0302',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Die No',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'M5050',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Part',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'Box Casting',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Planned Qty',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '4',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Injected Qty',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '4',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Date',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '05-12-2022',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Operator',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'JSK',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Pending',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'PRC',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'JB0028',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Die No',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'M5034',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Part',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'Bearning Block Rear',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Planned Qauntity',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '352',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Press 4',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w900),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.red[900],
-                          ),
-                          height: 50,
-                          width: 100,
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'JB0302',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Die No',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'M5050',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Part',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'Box Casting',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Planned Qty',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '4',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Injected Qty',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '4',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Date',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '05-12-2022',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Operator',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'JSK',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Pending',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'PRC',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'JB0028',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Die No',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'M5034',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Part',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            'Bearning Block Rear',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Planned Qauntity',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Text(
-                            '352',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(18),
-                child: Column(
-                  children: [
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'Temprature',
-                        style: TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.w900),
-                      ),
-                    ),
-                    Container(
-                      color: Colors.transparent,
-                      width: double.infinity,
-                      height: 270,
-                      child: SfRadialGauge(
-                        enableLoadingAnimation: true,
-                        animationDuration: 3500,
-                        axes: <RadialAxis>[
-                          // ignore: prefer_const_literals_to_create_immutables
-                          RadialAxis(
+                      Container(
+                        color: Colors.transparent,
+                        width: double.infinity,
+                        height: 270,
+                        child: SfRadialGauge(
+                          enableLoadingAnimation: true,
+                          animationDuration: 3500,
+                          axes: <RadialAxis>[
                             // ignore: prefer_const_literals_to_create_immutables
-                            interval: 10,
-                            startAngle: 180,
-                            endAngle: 0,
-                            canScaleToFit: true,
-                            pointers: <GaugePointer>[
-                              NeedlePointer(
-                                  value: 50,
-                                  needleColor: Colors.black,
-                                  tailStyle: TailStyle(
-                                      length: 0.15,
-                                      width: 7,
-                                      color: Colors.black,
-                                      lengthUnit: GaugeSizeUnit.factor),
-                                  needleLength: 0.5,
-                                  needleStartWidth: 1,
-                                  needleEndWidth: 8,
-                                  knobStyle: KnobStyle(
-                                      knobRadius: 0.07,
-                                      color: Colors.white,
-                                      borderWidth: 0.05,
-                                      borderColor: Colors.black),
-                                  lengthUnit: GaugeSizeUnit.factor)
+                            RadialAxis(
                               // ignore: prefer_const_literals_to_create_immutables
-                            ],
-                            annotations: <GaugeAnnotation>[
-                              GaugeAnnotation(
-                                  angle: 90,
-                                  positionFactor: 0.28,
-                                  widget: Text(
-                                    '50.0',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20),
-                                  ))
-                            ],
-                            ranges: <GaugeRange>[
-                              // GaugeRange(
-                              //     startValue: -60,
-                              //     endValue: 120,
-                              //     startWidth: 0.1,
-                              //     sizeUnit: GaugeSizeUnit.factor,
-                              //     endWidth: 0.1,
-                              //     gradient: SweepGradient(
-                              //         stops: <double>[
-                              //           0.5,
-                              //           0.75
-                              //         ],
-                              //         colors: <Color>[
-                              //           Colors.green,
-                              //           Colors.red
-                              //         ]))
-                              GaugeRange(
-                                  startValue: 0,
-                                  endValue: 50,
-                                  color: Colors.green,
-                                  startWidth: 10,
-                                  endWidth: 10),
-                              GaugeRange(
-                                  startValue: 50,
-                                  endValue: 100,
-                                  color: Colors.orange,
-                                  startWidth: 10,
-                                  endWidth: 10),
-                            ],
-                          ),
-                        ],
+                              interval: 10,
+                              startAngle: 180,
+                              endAngle: 0,
+                              canScaleToFit: true,
+                              pointers: <GaugePointer>[
+                                NeedlePointer(
+                                    value: 50,
+                                    needleColor: Colors.black,
+                                    tailStyle: TailStyle(
+                                        length: 0.15,
+                                        width: 7,
+                                        color: Colors.black,
+                                        lengthUnit: GaugeSizeUnit.factor),
+                                    needleLength: 0.5,
+                                    needleStartWidth: 1,
+                                    needleEndWidth: 8,
+                                    knobStyle: KnobStyle(
+                                        knobRadius: 0.07,
+                                        color: Colors.white,
+                                        borderWidth: 0.05,
+                                        borderColor: Colors.black),
+                                    lengthUnit: GaugeSizeUnit.factor)
+                                // ignore: prefer_const_literals_to_create_immutables
+                              ],
+                              annotations: <GaugeAnnotation>[
+                                GaugeAnnotation(
+                                    angle: 90,
+                                    positionFactor: 0.28,
+                                    widget: Text(
+                                      '50.0',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ))
+                              ],
+                              ranges: <GaugeRange>[
+                                GaugeRange(
+                                    startValue: 0,
+                                    endValue: 50,
+                                    color: Colors.green,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                                GaugeRange(
+                                    startValue: 50,
+                                    endValue: 100,
+                                    color: Colors.orange,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(18),
-                child: Column(
-                  children: [
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'Humidity',
-                        style: TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.w900),
-                      ),
-                    ),
-                    Container(
-                      color: Colors.transparent,
-                      width: double.infinity,
-                      height: 270,
-                      child: SfRadialGauge(
-                        enableLoadingAnimation: true,
-                        animationDuration: 3500,
-                        axes: <RadialAxis>[
-                          // ignore: prefer_const_literals_to_create_immutables
-                          RadialAxis(
-                            // ignore: prefer_const_literals_to_create_immutables
-                            interval: 10,
-                            startAngle: 180,
-                            endAngle: 0,
-                            canScaleToFit: true,
-                            pointers: <GaugePointer>[
-                              NeedlePointer(
-                                  value: 50,
-                                  needleColor: Colors.black,
-                                  tailStyle: TailStyle(
-                                      length: 0.15,
-                                      width: 7,
-                                      color: Colors.black,
-                                      lengthUnit: GaugeSizeUnit.factor),
-                                  needleLength: 0.5,
-                                  needleStartWidth: 1,
-                                  needleEndWidth: 8,
-                                  knobStyle: KnobStyle(
-                                      knobRadius: 0.07,
-                                      color: Colors.white,
-                                      borderWidth: 0.05,
-                                      borderColor: Colors.black),
-                                  lengthUnit: GaugeSizeUnit.factor)
-                              // ignore: prefer_const_literals_to_create_immutables
-                            ],
-                            annotations: <GaugeAnnotation>[
-                              GaugeAnnotation(
-                                  angle: 90,
-                                  positionFactor: 0.28,
-                                  widget: Text(
-                                    '50.0',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20),
-                                  ))
-                            ],
-                            ranges: <GaugeRange>[
-                              GaugeRange(
-                                  startValue: 0,
-                                  endValue: 50,
-                                  color: Colors.green,
-                                  startWidth: 10,
-                                  endWidth: 10),
-                              GaugeRange(
-                                  startValue: 50,
-                                  endValue: 100,
-                                  color: Colors.orange,
-                                  startWidth: 10,
-                                  endWidth: 10),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Graph',
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(18),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Humidity',
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.w900),
                         ),
-                      ],
-                    ),
-                    SfRadialGauge(
-                        enableLoadingAnimation: true,
-                        animationDuration: 3500,
-                        axes: <RadialAxis>[
-                          RadialAxis(
-                            annotations: <GaugeAnnotation>[
-                              GaugeAnnotation(
-                                  angle: 256,
-                                  positionFactor: 1.05,
-                                  widget: Text(
-                                    'PRC25',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20,
-                                        color: Colors.green),
-                                  )),
-                              GaugeAnnotation(
-                                  angle: 253,
-                                  positionFactor: 0.90,
-                                  widget: Text(
-                                    'PRC13',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20,
-                                        color: Colors.green[900]),
-                                  )),
-                              GaugeAnnotation(
-                                  angle: 249,
-                                  positionFactor: 0.75,
-                                  widget: Text(
-                                    'PRC08',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20,
-                                        color: Colors.green),
-                                  )),
-                              GaugeAnnotation(
-                                  angle: 242,
-                                  positionFactor: 0.6,
-                                  widget: Text(
-                                    'PRC15',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20,
-                                        color: Colors.green[900]),
-                                  )),
-                              GaugeAnnotation(
-                                  angle: 230,
-                                  positionFactor: 0.45,
-                                  widget: Text(
-                                    'PRC05',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20,
-                                        color: Colors.green),
-                                  )),
-                            ],
-                            // axisLabelStyle: GaugeTextStyle(
-                            //     fontSize: 20, fontStyle: FontStyle.italic),
-                            // showAxisLine: false,
-                            interval: 10,
-                            startAngle: 270,
-                            endAngle: 180,
-                            showTicks: false,
-                            showLabels: false,
-                            axisLineStyle: AxisLineStyle(thickness: 20),
-                            pointers: <GaugePointer>[
-                              RangePointer(
-                                  value: 75,
-                                  width: 20,
-                                  color: Colors.green,
-                                  enableAnimation: true,
-                                  cornerStyle: CornerStyle.bothCurve),
-                            ],
-                          ),
-                          RadialAxis(
-                            radiusFactor: 0.8,
-                            // showAxisLine: false,
-                            interval: 10,
-                            startAngle: 270,
-                            endAngle: 180,
-                            showTicks: false,
-                            showLabels: false,
-                            axisLineStyle: AxisLineStyle(thickness: 20),
-                            pointers: <GaugePointer>[
-                              RangePointer(
-                                  value: 65,
-                                  width: 20,
-                                  color: Colors.green[900],
-                                  enableAnimation: true,
-                                  cornerStyle: CornerStyle.bothCurve),
-                            ],
-                          ),
-                          RadialAxis(
-                            radiusFactor: 0.65,
-                            // showAxisLine: false,
-                            interval: 10,
-                            startAngle: 270,
-                            endAngle: 180,
-                            showTicks: false,
-                            showLabels: false,
-                            axisLineStyle: AxisLineStyle(thickness: 20),
-                            pointers: <GaugePointer>[
-                              RangePointer(
-                                  value: 55,
-                                  width: 20,
-                                  color: Colors.green,
-                                  enableAnimation: true,
-                                  cornerStyle: CornerStyle.bothCurve),
-                            ],
-                          ),
-                          RadialAxis(
-                            radiusFactor: 0.5,
-                            // showAxisLine: false,
-                            interval: 10,
-                            startAngle: 270,
-                            endAngle: 180,
-                            showTicks: false,
-                            showLabels: false,
-                            axisLineStyle: AxisLineStyle(thickness: 20),
-                            pointers: <GaugePointer>[
-                              RangePointer(
-                                  value: 45,
-                                  width: 20,
-                                  color: Colors.green[900],
-                                  enableAnimation: true,
-                                  cornerStyle: CornerStyle.bothCurve),
-                            ],
-                          ),
-                          RadialAxis(
-                            // showAxisLine: false,
-                            radiusFactor: 0.35,
-                            interval: 10,
-                            startAngle: 270,
-                            endAngle: 180,
-                            showTicks: false,
-                            showLabels: false,
-                            axisLineStyle: AxisLineStyle(thickness: 20),
-                            pointers: <GaugePointer>[
-                              RangePointer(
-                                  value: 25,
-                                  width: 20,
-                                  color: Colors.green,
-                                  enableAnimation: true,
-                                  cornerStyle: CornerStyle.bothCurve),
-                            ],
-                          ),
-                        ]),
-                  ],
+                      ),
+                      Container(
+                        color: Colors.transparent,
+                        width: double.infinity,
+                        height: 270,
+                        child: SfRadialGauge(
+                          enableLoadingAnimation: true,
+                          animationDuration: 3500,
+                          axes: <RadialAxis>[
+                            // ignore: prefer_const_literals_to_create_immutables
+                            RadialAxis(
+                              // ignore: prefer_const_literals_to_create_immutables
+                              interval: 10,
+                              startAngle: 180,
+                              endAngle: 0,
+                              canScaleToFit: true,
+                              pointers: <GaugePointer>[
+                                NeedlePointer(
+                                    value: 50,
+                                    needleColor: Colors.black,
+                                    tailStyle: TailStyle(
+                                        length: 0.15,
+                                        width: 7,
+                                        color: Colors.black,
+                                        lengthUnit: GaugeSizeUnit.factor),
+                                    needleLength: 0.5,
+                                    needleStartWidth: 1,
+                                    needleEndWidth: 8,
+                                    knobStyle: KnobStyle(
+                                        knobRadius: 0.07,
+                                        color: Colors.white,
+                                        borderWidth: 0.05,
+                                        borderColor: Colors.black),
+                                    lengthUnit: GaugeSizeUnit.factor)
+                                // ignore: prefer_const_literals_to_create_immutables
+                              ],
+                              annotations: <GaugeAnnotation>[
+                                GaugeAnnotation(
+                                    angle: 90,
+                                    positionFactor: 0.28,
+                                    widget: Text(
+                                      '50.0',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ))
+                              ],
+                              ranges: <GaugeRange>[
+                                GaugeRange(
+                                    startValue: 0,
+                                    endValue: 50,
+                                    color: Colors.green,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                                GaugeRange(
+                                    startValue: 50,
+                                    endValue: 100,
+                                    color: Colors.orange,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(18),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Viscocity',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                      Container(
+                        color: Colors.transparent,
+                        width: double.infinity,
+                        height: 270,
+                        child: SfRadialGauge(
+                          enableLoadingAnimation: true,
+                          animationDuration: 3500,
+                          axes: <RadialAxis>[
+                            // ignore: prefer_const_literals_to_create_immutables
+                            RadialAxis(
+                              // ignore: prefer_const_literals_to_create_immutables
+                              interval: 10,
+                              startAngle: 180,
+                              endAngle: 0,
+                              canScaleToFit: true,
+                              pointers: <GaugePointer>[
+                                NeedlePointer(
+                                    value: 50,
+                                    needleColor: Colors.black,
+                                    tailStyle: TailStyle(
+                                        length: 0.15,
+                                        width: 7,
+                                        color: Colors.black,
+                                        lengthUnit: GaugeSizeUnit.factor),
+                                    needleLength: 0.5,
+                                    needleStartWidth: 1,
+                                    needleEndWidth: 8,
+                                    knobStyle: KnobStyle(
+                                        knobRadius: 0.07,
+                                        color: Colors.white,
+                                        borderWidth: 0.05,
+                                        borderColor: Colors.black),
+                                    lengthUnit: GaugeSizeUnit.factor)
+                                // ignore: prefer_const_literals_to_create_immutables
+                              ],
+                              annotations: <GaugeAnnotation>[
+                                GaugeAnnotation(
+                                    angle: 90,
+                                    positionFactor: 0.28,
+                                    widget: Text(
+                                      '50.0',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ))
+                              ],
+                              ranges: <GaugeRange>[
+                                GaugeRange(
+                                    startValue: 0,
+                                    endValue: 50,
+                                    color: Colors.green,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                                GaugeRange(
+                                    startValue: 50,
+                                    endValue: 100,
+                                    color: Colors.orange,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Intermediate Coating',
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.w900),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.red[900],
+                            ),
+                            height: 50,
+                            width: 100,
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'JB0302',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Die No',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'M5050',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Part',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'Box Casting',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC Quantity',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '4',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Plate Weight',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '4',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Specific Density',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '3.01',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Operator',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'JSK',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '1',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '2',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '3',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '4',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '5',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '6',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '7',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '8',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Pending',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'JB0028',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Die No',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'M5034',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Part',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'Bearning Block Rear',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Planned Qauntity',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '352',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(18),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Viscocity',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                      Container(
+                        color: Colors.transparent,
+                        width: double.infinity,
+                        height: 270,
+                        child: SfRadialGauge(
+                          enableLoadingAnimation: true,
+                          animationDuration: 3500,
+                          axes: <RadialAxis>[
+                            // ignore: prefer_const_literals_to_create_immutables
+                            RadialAxis(
+                              // ignore: prefer_const_literals_to_create_immutables
+                              interval: 10,
+                              startAngle: 180,
+                              endAngle: 0,
+                              canScaleToFit: true,
+                              pointers: <GaugePointer>[
+                                NeedlePointer(
+                                    value: 50,
+                                    needleColor: Colors.black,
+                                    tailStyle: TailStyle(
+                                        length: 0.15,
+                                        width: 7,
+                                        color: Colors.black,
+                                        lengthUnit: GaugeSizeUnit.factor),
+                                    needleLength: 0.5,
+                                    needleStartWidth: 1,
+                                    needleEndWidth: 8,
+                                    knobStyle: KnobStyle(
+                                        knobRadius: 0.07,
+                                        color: Colors.white,
+                                        borderWidth: 0.05,
+                                        borderColor: Colors.black),
+                                    lengthUnit: GaugeSizeUnit.factor)
+                                // ignore: prefer_const_literals_to_create_immutables
+                              ],
+                              annotations: <GaugeAnnotation>[
+                                GaugeAnnotation(
+                                    angle: 90,
+                                    positionFactor: 0.28,
+                                    widget: Text(
+                                      '50.0',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ))
+                              ],
+                              ranges: <GaugeRange>[
+                                GaugeRange(
+                                    startValue: 0,
+                                    endValue: 50,
+                                    color: Colors.green,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                                GaugeRange(
+                                    startValue: 50,
+                                    endValue: 100,
+                                    color: Colors.orange,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Backup Coating',
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.w900),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.green[900],
+                            ),
+                            height: 50,
+                            width: 100,
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'JB0302',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Die No',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'M5050',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Part',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'Box Casting',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC Quantity',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '4',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Plate Weight',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '4',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Specific Density',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '3.01',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Operator',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'JSK',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.green[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '1',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.green[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '2',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '3',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '4',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '5',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '6',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '7',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.red[900],
+                              ),
+                              height: 45,
+                              width: 67,
+                              child: Text(
+                                '8',
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Pending',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'JB0028',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Die No',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'M5034',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Part',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'Bearning Block Rear',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Planned Qauntity',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '352',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(18),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Temprature',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                      Container(
+                        color: Colors.transparent,
+                        width: double.infinity,
+                        height: 270,
+                        child: SfRadialGauge(
+                          enableLoadingAnimation: true,
+                          animationDuration: 3500,
+                          axes: <RadialAxis>[
+                            // ignore: prefer_const_literals_to_create_immutables
+                            RadialAxis(
+                              // ignore: prefer_const_literals_to_create_immutables
+                              interval: 10,
+                              startAngle: 180,
+                              endAngle: 0,
+                              canScaleToFit: true,
+                              pointers: <GaugePointer>[
+                                NeedlePointer(
+                                    value: 50,
+                                    needleColor: Colors.black,
+                                    tailStyle: TailStyle(
+                                        length: 0.15,
+                                        width: 7,
+                                        color: Colors.black,
+                                        lengthUnit: GaugeSizeUnit.factor),
+                                    needleLength: 0.5,
+                                    needleStartWidth: 1,
+                                    needleEndWidth: 8,
+                                    knobStyle: KnobStyle(
+                                        knobRadius: 0.07,
+                                        color: Colors.white,
+                                        borderWidth: 0.05,
+                                        borderColor: Colors.black),
+                                    lengthUnit: GaugeSizeUnit.factor)
+                                // ignore: prefer_const_literals_to_create_immutables
+                              ],
+                              annotations: <GaugeAnnotation>[
+                                GaugeAnnotation(
+                                    angle: 90,
+                                    positionFactor: 0.28,
+                                    widget: Text(
+                                      '50.0',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ))
+                              ],
+                              ranges: <GaugeRange>[
+                                GaugeRange(
+                                    startValue: 0,
+                                    endValue: 50,
+                                    color: Colors.green,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                                GaugeRange(
+                                    startValue: 50,
+                                    endValue: 100,
+                                    color: Colors.orange,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(18),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Humidity',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                      Container(
+                        color: Colors.transparent,
+                        width: double.infinity,
+                        height: 270,
+                        child: SfRadialGauge(
+                          enableLoadingAnimation: true,
+                          animationDuration: 3500,
+                          axes: <RadialAxis>[
+                            // ignore: prefer_const_literals_to_create_immutables
+                            RadialAxis(
+                              // ignore: prefer_const_literals_to_create_immutables
+                              interval: 10,
+                              startAngle: 180,
+                              endAngle: 0,
+                              canScaleToFit: true,
+                              pointers: <GaugePointer>[
+                                NeedlePointer(
+                                    value: 50,
+                                    needleColor: Colors.black,
+                                    tailStyle: TailStyle(
+                                        length: 0.15,
+                                        width: 7,
+                                        color: Colors.black,
+                                        lengthUnit: GaugeSizeUnit.factor),
+                                    needleLength: 0.5,
+                                    needleStartWidth: 1,
+                                    needleEndWidth: 8,
+                                    knobStyle: KnobStyle(
+                                        knobRadius: 0.07,
+                                        color: Colors.white,
+                                        borderWidth: 0.05,
+                                        borderColor: Colors.black),
+                                    lengthUnit: GaugeSizeUnit.factor)
+                                // ignore: prefer_const_literals_to_create_immutables
+                              ],
+                              annotations: <GaugeAnnotation>[
+                                GaugeAnnotation(
+                                    angle: 90,
+                                    positionFactor: 0.28,
+                                    widget: Text(
+                                      '50.0',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ))
+                              ],
+                              ranges: <GaugeRange>[
+                                GaugeRange(
+                                    startValue: 0,
+                                    endValue: 50,
+                                    color: Colors.green,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                                GaugeRange(
+                                    startValue: 50,
+                                    endValue: 100,
+                                    color: Colors.orange,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(18),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Viscocity',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                      Container(
+                        color: Colors.transparent,
+                        width: double.infinity,
+                        height: 270,
+                        child: SfRadialGauge(
+                          enableLoadingAnimation: true,
+                          animationDuration: 3500,
+                          axes: <RadialAxis>[
+                            // ignore: prefer_const_literals_to_create_immutables
+                            RadialAxis(
+                              // ignore: prefer_const_literals_to_create_immutables
+                              interval: 10,
+                              startAngle: 180,
+                              endAngle: 0,
+                              canScaleToFit: true,
+                              pointers: <GaugePointer>[
+                                NeedlePointer(
+                                    value: 50,
+                                    needleColor: Colors.black,
+                                    tailStyle: TailStyle(
+                                        length: 0.15,
+                                        width: 7,
+                                        color: Colors.black,
+                                        lengthUnit: GaugeSizeUnit.factor),
+                                    needleLength: 0.5,
+                                    needleStartWidth: 1,
+                                    needleEndWidth: 8,
+                                    knobStyle: KnobStyle(
+                                        knobRadius: 0.07,
+                                        color: Colors.white,
+                                        borderWidth: 0.05,
+                                        borderColor: Colors.black),
+                                    lengthUnit: GaugeSizeUnit.factor)
+                                // ignore: prefer_const_literals_to_create_immutables
+                              ],
+                              annotations: <GaugeAnnotation>[
+                                GaugeAnnotation(
+                                    angle: 90,
+                                    positionFactor: 0.28,
+                                    widget: Text(
+                                      '50.0',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ))
+                              ],
+                              ranges: <GaugeRange>[
+                                GaugeRange(
+                                    startValue: 0,
+                                    endValue: 50,
+                                    color: Colors.green,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                                GaugeRange(
+                                    startValue: 50,
+                                    endValue: 100,
+                                    color: Colors.orange,
+                                    startWidth: 10,
+                                    endWidth: 10),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    } else {
+      return Expanded(
+        child: MediaQuery.removePadding(
+          context: context,
+          removeTop: true,
+          child: ListView(
+            padding: EdgeInsets.all(5),
+            children: [
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Text(
+                    //   'Machine Photo Press 1',
+                    //   style: TextStyle(
+                    //       fontSize: 17, fontWeight: FontWeight.w900),
+                    // ),
+                    Stack(
+                      children: [
+                        SizedBox(
+                          height: 300,
+                          width: 340,
+                          child: Image.asset(
+                              'assets/images/Machines/Autoclave Boiler with Controller.png'),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(12, 76, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(12, 108, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(274, 179, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(305, 179, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Status',
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.w900),
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.red[900],
+                            ),
+                            height: 50,
+                            width: 100,
+                            child: Text(
+                              'Off',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 15),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'IB0998',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Die No',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'M5050',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Part',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'Box Casting',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC Quantity',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '4',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Operator',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'JSK',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Pending',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'JB0028',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Die No',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'M5034',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Part',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              'Bearning Block Rear',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC Qauntity',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                            Text(
+                              '352',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w900),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
   }
 }

@@ -1641,25 +1641,79 @@ class _OverviewState extends State<Overview> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
                 color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Machine Photo Press 1',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Text(
+                    //   'Machine Photo Press 1',
+                    //   style: TextStyle(
+                    //       fontSize: 17, fontWeight: FontWeight.w900),
+                    // ),
+                    Stack(
+                      children: [
+                        SizedBox(
+                          height: 440,
+                          width: 340,
+                          child: Image.asset(
+                              'assets/images/Machines/Wax Injection Press 1.png'),
                         ),
-                      ),
-                    ],
-                  ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 136, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 136, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 162, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 162, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 190, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 190, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
               Card(
@@ -1960,25 +2014,79 @@ class _OverviewState extends State<Overview> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
                 color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Machine Photo Press 2',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Text(
+                    //   'Machine Photo Press 1',
+                    //   style: TextStyle(
+                    //       fontSize: 17, fontWeight: FontWeight.w900),
+                    // ),
+                    Stack(
+                      children: [
+                        SizedBox(
+                          height: 440,
+                          width: 340,
+                          child: Image.asset(
+                              'assets/images/Machines/Wax Injection Press 2.png'),
                         ),
-                      ),
-                    ],
-                  ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 136, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 136, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 162, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 162, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 190, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 190, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
               Card(
@@ -2279,25 +2387,79 @@ class _OverviewState extends State<Overview> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
                 color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Machine Photo Press 3',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Text(
+                    //   'Machine Photo Press 1',
+                    //   style: TextStyle(
+                    //       fontSize: 17, fontWeight: FontWeight.w900),
+                    // ),
+                    Stack(
+                      children: [
+                        SizedBox(
+                          height: 440,
+                          width: 340,
+                          child: Image.asset(
+                              'assets/images/Machines/Wax Injection Press 3.png'),
                         ),
-                      ),
-                    ],
-                  ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 136, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 136, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 162, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 162, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 190, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 190, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
               Card(
@@ -2598,25 +2760,79 @@ class _OverviewState extends State<Overview> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
                 color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Machine Photo Press 4',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Text(
+                    //   'Machine Photo Press 1',
+                    //   style: TextStyle(
+                    //       fontSize: 17, fontWeight: FontWeight.w900),
+                    // ),
+                    Stack(
+                      children: [
+                        SizedBox(
+                          height: 440,
+                          width: 340,
+                          child: Image.asset(
+                              'assets/images/Machines/Wax Injection Press 4.png'),
                         ),
-                      ),
-                    ],
-                  ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 136, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 136, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 162, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 162, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(231.5, 190, 0, 0),
+                          child: Text(
+                            'data',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(277, 190, 0, 0),
+                          child: Text(
+                            'data 1',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.yellow, fontSize: 11),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
               Card(
@@ -2885,7 +3101,7 @@ class _OverviewState extends State<Overview> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Power Consumption',
+                              'Power Consum.',
                               style: TextStyle(
                                   fontSize: 17, fontWeight: FontWeight.w900),
                             ),

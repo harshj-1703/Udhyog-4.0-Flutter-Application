@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udhyog4/pm_melting&pouring.dart';
 import 'package:udhyog4/pm_pattern.dart';
 import 'package:udhyog4/pm_shell.dart';
 
@@ -242,6 +243,15 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                             width: 70,
                           ),
                         ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  MeltingAndPouring(),
+                            ),
+                          );
+                        },
                       ),
                       Text(
                         'Melting &\nPouring',
