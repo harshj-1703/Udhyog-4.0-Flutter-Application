@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhyog4/pm_pattern.dart';
+import 'package:udhyog4/pm_shell.dart';
 
 class ProcessMonitoring extends StatefulWidget {
   const ProcessMonitoring({super.key});
@@ -96,7 +97,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i1.png',
                             height: 70,
                             width: 70,
                           ),
@@ -119,7 +120,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i2.png',
                             height: 70,
                             width: 70,
                           ),
@@ -142,7 +143,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i3.png',
                             height: 70,
                             width: 70,
                           ),
@@ -182,7 +183,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i4.png',
                             height: 70,
                             width: 70,
                           ),
@@ -205,11 +206,19 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i5.png',
                             height: 70,
                             width: 70,
                           ),
                         ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (BuildContext context) => PmShell(),
+                            ),
+                          );
+                        },
                       ),
                       Text(
                         'Shell',
@@ -228,7 +237,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i6.png',
                             height: 70,
                             width: 70,
                           ),
@@ -263,7 +272,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i7.png',
                             height: 70,
                             width: 70,
                           ),
@@ -286,7 +295,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i8.png',
                             height: 70,
                             width: 70,
                           ),
@@ -309,7 +318,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i9.png',
                             height: 70,
                             width: 70,
                           ),
@@ -344,7 +353,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i10.png',
                             height: 70,
                             width: 70,
                           ),
@@ -367,7 +376,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i11.png',
                             height: 70,
                             width: 70,
                           ),
@@ -390,7 +399,7 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                           backgroundColor: Colors.white,
                           radius: 48,
                           child: Image.asset(
-                            'assets/images/d1.png',
+                            'assets/images/pm_icons/i12.png',
                             height: 70,
                             width: 70,
                           ),
