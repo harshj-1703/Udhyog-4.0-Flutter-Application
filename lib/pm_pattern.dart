@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
+import 'package:http/http.dart' as http;
 
 class PmPattern extends StatefulWidget {
   PmPattern({super.key});
@@ -11,7 +14,28 @@ class PmPattern extends StatefulWidget {
 
 int setPage = 0;
 
+// String data1 = '0';
+Future? _futurePress1;
+
+Future<List> getPress1Data() async {
+  var url =
+      Uri.parse('http://192.168.4.245/udhyog4/lib/apis/pattern_press1.php');
+  var response = await http.get(url);
+  print('Response status: ${response.statusCode}');
+  print('Response body: ${response.body}');
+  var responseData = json.decode(response.body);
+  // print(responseData[0]['data1']);
+  // data1 = responseData[0]['data1'];
+  return responseData;
+}
+
 class _PmPatternState extends State<PmPattern> {
+  @override
+  void initState() {
+    _futurePress1 = getPress1Data();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1630,378 +1654,434 @@ class _OverviewState extends State<Overview> {
         ),
       );
     } else if (setPage == 1) {
-      return Expanded(
-        child: MediaQuery.removePadding(
-          context: context,
-          removeTop: true,
-          child: ListView(
-            padding: EdgeInsets.all(5),
-            children: [
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                color: Colors.white,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+      return FutureBuilder<dynamic>(
+          future: _futurePress1,
+          builder: (ctx, snapshot) {
+            if (!snapshot.hasData) {
+              return Center(child: CircularProgressIndicator());
+            }
+            return Expanded(
+              child: MediaQuery.removePadding(
+                context: context,
+                removeTop: true,
+                child: ListView(
+                  padding: EdgeInsets.all(5),
                   children: [
-                    // Text(
-                    //   'Machine Photo Press 1',
-                    //   style: TextStyle(
-                    //       fontSize: 17, fontWeight: FontWeight.w900),
-                    // ),
-                    Stack(
-                      children: [
-                        SizedBox(
-                          height: 440,
-                          width: 340,
-                          child: Image.asset(
-                              'assets/images/Machines/Wax Injection Press 1.png'),
+                    Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      color: Colors.white,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // Text(
+                          //   'Machine Photo Press 1',
+                          //   style: TextStyle(
+                          //       fontSize: 17, fontWeight: FontWeight.w900),
+                          // ),
+                          Stack(
+                            children: [
+                              SizedBox(
+                                height: 440,
+                                width: 340,
+                                child: Image.asset(
+                                    'assets/images/Machines/Wax Injection Press 1.png'),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(231.5, 136, 0, 0),
+                                child: Text(
+                                  snapshot.data[0]['id'],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.yellow, fontSize: 11),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(277, 136, 0, 0),
+                                child: Text(
+                                  snapshot.data[0]['data2'],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.yellow, fontSize: 11),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(231.5, 162, 0, 0),
+                                child: Text(
+                                  'data',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.yellow, fontSize: 11),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(277, 162, 0, 0),
+                                child: Text(
+                                  'data 1',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.yellow, fontSize: 11),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(231.5, 190, 0, 0),
+                                child: Text(
+                                  'data',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.yellow, fontSize: 11),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(277, 190, 0, 0),
+                                child: Text(
+                                  'data 1',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.yellow, fontSize: 11),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      color: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Status',
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w900),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50),
+                                    color: Colors.red[900],
+                                  ),
+                                  height: 50,
+                                  width: 100,
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'PRC',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    'JB0302',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Die No',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    'M5050',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Part',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    'Box Casting',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Operator',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    'JSK',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Planned Qty',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    '4',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Injected Qty',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    '4',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Rejected Qty',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    '0',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Set Pressure',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    '-kgf/cm2',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Set Tempreture 1',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    '220 C',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Set Tempreture 2',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    '220 C',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Set Tempreture 3',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    '220 C',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Set Tempreture 4',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    '220 C',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Set Dwell Time',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    '2.5 Min',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Power Consumption',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                  Text(
+                                    '120.12 Units',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(231.5, 136, 0, 0),
-                          child: Text(
-                            'data',
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(color: Colors.yellow, fontSize: 11),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(277, 136, 0, 0),
-                          child: Text(
-                            'data 1',
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(color: Colors.yellow, fontSize: 11),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(231.5, 162, 0, 0),
-                          child: Text(
-                            'data',
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(color: Colors.yellow, fontSize: 11),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(277, 162, 0, 0),
-                          child: Text(
-                            'data 1',
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(color: Colors.yellow, fontSize: 11),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(231.5, 190, 0, 0),
-                          child: Text(
-                            'data',
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(color: Colors.yellow, fontSize: 11),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(277, 190, 0, 0),
-                          child: Text(
-                            'data 1',
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(color: Colors.yellow, fontSize: 11),
-                          ),
-                        ),
-                      ],
-                    )
+                      ),
+                    ),
                   ],
                 ),
               ),
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Status',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              color: Colors.red[900],
-                            ),
-                            height: 50,
-                            width: 100,
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'PRC',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'JB0302',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Die No',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'M5050',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Part',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'Box Casting',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Operator',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'JSK',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Planned Qty',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '4',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Injected Qty',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '4',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Rejected Qty',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Set Pressure',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '-kgf/cm2',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Set Tempreture 1',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '220 C',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Set Tempreture 2',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '220 C',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Set Tempreture 3',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '220 C',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Set Tempreture 4',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '220 C',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Set Dwell Time',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '2.5 Min',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Power Consumption',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '120.12 Units',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
+            );
+          });
     } else if (setPage == 2) {
       return Expanded(
         child: MediaQuery.removePadding(
