@@ -1,6 +1,6 @@
 <?php
 
-include './connect.php';
+include '../connect.php';
 
 $sql = "SELECT * FROM devicedemo ORDER BY id DESC LIMIT 1";
 $result = mysqli_query($conn,$sql);

@@ -21,11 +21,11 @@ int setPage = 0;
 Future? _futurePress1;
 
 Future<Press1> getPress1Data() async {
-  var url =
-      Uri.parse('http://192.168.4.245/udhyog4/lib/apis/pattern_press1.php');
+  var url = Uri.parse(
+      'http://192.168.4.245/udhyog4/lib/apis/pattern/pattern_press1.php');
   var response = await http.get(url);
-  print('Response status: ${response.statusCode}');
-  print('Response body: ${response.body}');
+  // print('Response status: ${response.statusCode}');
+  // print('Response body: ${response.body}');
   var responseData = json.decode(response.body);
   // print(responseData[0]['data1']);
   // data1 = responseData[0]['data1'];
