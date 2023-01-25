@@ -18,7 +18,7 @@ class PmPattern extends StatefulWidget {
 int setPage = 0;
 
 // String data1 = '0';
-Future? _futurePress1;
+// Future? _futurePress1;
 
 Future<Press1> getPress1Data() async {
   var url = Uri.parse(
