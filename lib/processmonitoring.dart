@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udhyog4/pm_finishing.dart';
 import 'package:udhyog4/pm_melting&pouring.dart';
 import 'package:udhyog4/pm_pattern.dart';
 import 'package:udhyog4/pm_shell.dart';
@@ -276,7 +277,12 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                     children: [
                       InkWell(
                         onTap: () {
-                          print('1');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (BuildContext context) => PmFinishing(),
+                            ),
+                          );
                         },
                         child: CircleAvatar(
                           backgroundColor: Colors.white,

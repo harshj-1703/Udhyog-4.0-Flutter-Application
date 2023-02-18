@@ -22,14 +22,14 @@ int setPage = 0;
 
 Future<Press1> getPress1Data() async {
   var url = Uri.parse(
-      'http://192.168.4.245/udhyog4/lib/apis/pattern/pattern_press1.php');
+      'http://192.168.64.245/udhyog4/lib/apis/pattern/pattern_press1.php');
   var response = await http.get(url);
   // print('Response status: ${response.statusCode}');
   // print('Response body: ${response.body}');
   var responseData = json.decode(response.body);
   // print(responseData[0]['data1']);
   // data1 = responseData[0]['data1'];
-  await Future.delayed(Duration(seconds: 1));
+  // await Future.delayed(Duration(seconds: 1));
   return Press1.fromJSON(responseData[0]);
 }
 
@@ -37,6 +37,7 @@ Future<Press1> getPress1Data() async {
 Stream<Press1> getPress1_Data() async* {
   while (true) {
     yield await getPress1Data();
+    await Future.delayed(Duration(seconds: 1));
   }
 }
 
