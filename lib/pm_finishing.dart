@@ -152,6 +152,8 @@ class Overview1 extends StatefulWidget {
   State<Overview1> createState() => _Overview1State();
 }
 
+CarouselController buttonCarouselController = CarouselController();
+
 class _Overview1State extends State<Overview1> {
   @override
   Widget build(BuildContext context) {
@@ -315,232 +317,351 @@ class _Overview1State extends State<Overview1> {
                         child: Stack(
                           alignment: Alignment.bottomCenter,
                           children: [
-                            SingleChildScrollView(
-                              child: CarouselSlider(
-                                  items: [
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.fromLTRB(9, 9, 9, 0),
-                                      child: Column(
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.all(6),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Text(
-                                                  'Pending',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
+                            Stack(
+                              alignment: Alignment.bottomCenter,
+                              children: [
+                                SingleChildScrollView(
+                                  child: CarouselSlider(
+                                      items: [
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              9, 9, 9, 0),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(6),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      'Pending',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(6),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Heat No',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                    Text(
+                                                      '0C126',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(6),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'PRC No',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                    Text(
+                                                      'IB0975',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(6),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Die No',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                    Text(
+                                                      'M5050',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(6),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Part',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                    Text(
+                                                      'Front Y Slide Casting-LCB',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(6),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Grade',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                    Text(
+                                                      'A356T6',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(6),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Quantity',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                    Text(
+                                                      '4',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.fromLTRB(
+                                                        6, 6, 6, 0),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Issue Date and Time',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                    Text(
+                                                      '31-07-2021',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(6),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  'Heat No',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              9, 9, 9, 0),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(6),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      'Pending2',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
                                                 ),
-                                                Text(
-                                                  '0C126',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(6),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Heat No',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                    Text(
+                                                      '0C126',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.fromLTRB(
+                                                        6, 6, 6, 0),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Text(
+                                                      'Issue Date and Time',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                    Text(
+                                                      '31-07-2021',
+                                                      style: TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.w900),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(6),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  'PRC No',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                                Text(
-                                                  'IB0975',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(6),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  'Die No',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                                Text(
-                                                  'M5050',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(6),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  'Part',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                                Text(
-                                                  'Front Y Slide Casting-LCB',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(6),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  'Grade',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                                Text(
-                                                  'A356T6',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(6),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  'Quantity',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                                Text(
-                                                  '4',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.fromLTRB(
-                                                6, 6, 6, 0),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  'Issue Date and Time',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                                Text(
-                                                  '31-07-2021',
-                                                  style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.w900),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                  options: CarouselOptions(
-                                    height: 310,
-                                    // aspectRatio: 1.1,
-                                    viewportFraction: 0.95,
-                                    initialPage: 0,
-                                    enableInfiniteScroll: true,
-                                    reverse: false,
-                                    autoPlay: true,
-                                    autoPlayInterval: Duration(seconds: 5),
-                                    autoPlayAnimationDuration:
-                                        Duration(milliseconds: 800),
-                                    autoPlayCurve: Curves.fastOutSlowIn,
-                                    enlargeCenterPage: true,
-                                    enlargeFactor: 0.3,
-                                    scrollDirection: Axis.horizontal,
-                                    onPageChanged: (index, reason) {
-                                      setState(() {
-                                        activeIndexSub = index;
-                                      });
-                                    },
-                                  )),
+                                        ),
+                                      ],
+                                      carouselController:
+                                          buttonCarouselController,
+                                      options: CarouselOptions(
+                                        height: 310,
+                                        // aspectRatio: 1.1,
+                                        viewportFraction: 0.95,
+                                        initialPage: 0,
+                                        enableInfiniteScroll: true,
+                                        autoPlay: true,
+                                        autoPlayInterval: Duration(seconds: 4),
+                                        autoPlayAnimationDuration:
+                                            Duration(milliseconds: 700),
+                                        autoPlayCurve: Curves.fastOutSlowIn,
+                                        enlargeCenterPage: true,
+                                        // enlargeFactor: 0.3,
+                                        scrollDirection: Axis.horizontal,
+                                        onPageChanged: (index, reason) {
+                                          setState(() {
+                                            activeIndexSub = index;
+                                          });
+                                        },
+                                      )),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(15),
+                                  child: AnimatedSmoothIndicator(
+                                    activeIndex: activeIndexSub,
+                                    count: 2,
+                                  ),
+                                ),
+                              ],
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(15),
-                              child: AnimatedSmoothIndicator(
-                                activeIndex: activeIndexMain,
-                                count: 2,
-                              ),
-                            ),
+                            // Row(
+                            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            //   children: [
+                            //     Flexible(
+                            //       child: IconButton(
+                            //         onPressed: () {
+                            //           buttonCarouselController.previousPage();
+                            //         },
+                            //         icon: Icon(
+                            //           Icons.arrow_back_ios,
+                            //           color: Colors.amber,
+                            //           size: 30,
+                            //         ),
+                            //       ),
+                            //     ),
+                            //     Flexible(
+                            //       child: IconButton(
+                            //         onPressed: () {
+                            //           buttonCarouselController.nextPage();
+                            //         },
+                            //         icon: Icon(
+                            //           Icons.arrow_forward_ios,
+                            //           color: Colors.amber,
+                            //           size: 30,
+                            //         ),
+                            //       ),
+                            //     ),
+                            //   ],
+                            // )
                           ],
                         ),
                       ),
