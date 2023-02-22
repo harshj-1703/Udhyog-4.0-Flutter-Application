@@ -1,4 +1,6 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HeatTreatment extends StatefulWidget {
   const HeatTreatment({super.key});
@@ -159,6 +161,11 @@ class _HeatTreatmentState extends State<HeatTreatment> {
   }
 }
 
+int activeIndexMain = 0;
+int activeIndexSub = 0;
+
+CarouselController buttonCarouselController = CarouselController();
+
 class Overview2 extends StatefulWidget {
   const Overview2({super.key});
 
@@ -187,7 +194,7 @@ class _Overview2State extends State<Overview2> {
                     // Text(
                     //   'Machine Photo Press 1',
                     //   style: TextStyle(
-                    //       fontSize: 17, fontWeight: FontWeight.w900),
+                    //       fontSize: 17, ),
                     // ),
                     Stack(
                       children: [
@@ -241,9 +248,9 @@ class _Overview2State extends State<Overview2> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Status',
+                            'Furnace 1',
                             style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 20, fontWeight: FontWeight.w900),
                           ),
                           Container(
                             alignment: Alignment.center,
@@ -262,184 +269,346 @@ class _Overview2State extends State<Overview2> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'PRC',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'IB0998',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
+                        padding: EdgeInsets.all(6),
+                        child: Container(
+                          child: Text(
+                            'No Current History',
+                            style: TextStyle(color: Colors.grey, fontSize: 20),
+                          ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Heat No',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'M5050',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
+                      Divider(
+                        height: 1,
+                        // thickness: 0.2,
+                        // color: Colors.black,
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Die No',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'M5050',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
+                        padding: EdgeInsets.all(6),
+                        child: Container(
+                          child: Text(
+                            'Pending',
+                            style: TextStyle(
+                                fontSize: 19, fontWeight: FontWeight.w900),
+                          ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Part',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                      Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: [
+                          SingleChildScrollView(
+                            child: CarouselSlider(
+                                items: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(9, 9, 9, 0),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Heat No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'M5050',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'PRC No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'IB0998',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Die No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'M5050',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Grade',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                '1',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Quantity',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                '4',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Issue Date & Time',
+                                                  style: TextStyle(
+                                                    fontSize: 17,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.fromLTRB(
+                                                          30, 0, 0, 0),
+                                                  child: Text(
+                                                    '22-02-2023-10:54:AM',
+                                                    style: TextStyle(
+                                                      fontSize: 17,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(9, 9, 9, 0),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Heat No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'M5051',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'PRC No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'IB0998',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Die No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'M5050',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Grade',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                '1',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Quantity',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                '4',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Issue Date & Time',
+                                                  style: TextStyle(
+                                                    fontSize: 17,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.fromLTRB(
+                                                          30, 0, 0, 0),
+                                                  child: Text(
+                                                    '22-02-2023-10:54:AM',
+                                                    style: TextStyle(
+                                                      fontSize: 17,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                                carouselController: buttonCarouselController,
+                                options: CarouselOptions(
+                                  height: 250,
+                                  // aspectRatio: 1.1,
+                                  viewportFraction: 0.95,
+                                  initialPage: 0,
+                                  enableInfiniteScroll: true,
+                                  autoPlay: true,
+                                  autoPlayInterval: Duration(seconds: 4),
+                                  autoPlayAnimationDuration:
+                                      Duration(milliseconds: 700),
+                                  autoPlayCurve: Curves.fastOutSlowIn,
+                                  enlargeCenterPage: true,
+                                  // enlargeFactor: 0.3,
+                                  scrollDirection: Axis.horizontal,
+                                  onPageChanged: (index, reason) {
+                                    setState(() {
+                                      activeIndexSub = index;
+                                    });
+                                  },
+                                )),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(15),
+                            child: AnimatedSmoothIndicator(
+                              activeIndex: activeIndexSub,
+                              count: 2,
                             ),
-                            Text(
-                              'Box Casting',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Grade',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '1',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Customer',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'JSK',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'PRC Quantity',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '4',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Weight',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '100',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Supervisor',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'JSK',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Room Temp. & Humidity',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '28',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -467,7 +636,7 @@ class _Overview2State extends State<Overview2> {
                     // Text(
                     //   'Machine Photo Press 1',
                     //   style: TextStyle(
-                    //       fontSize: 17, fontWeight: FontWeight.w900),
+                    //       fontSize: 17, ),
                     // ),
                     Stack(
                       children: [
@@ -521,15 +690,15 @@ class _Overview2State extends State<Overview2> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Status',
+                            'Furnace 2',
                             style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 20, fontWeight: FontWeight.w900),
                           ),
                           Container(
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
-                              color: Colors.red[900],
+                              color: Colors.green[900],
                             ),
                             height: 50,
                             width: 100,
@@ -542,19 +711,61 @@ class _Overview2State extends State<Overview2> {
                         ],
                       ),
                       Padding(
+                        padding: const EdgeInsets.fromLTRB(6, 15, 6, 6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Heat Treatment Cycle No.',
+                              style: TextStyle(
+                                fontSize: 17,
+                              ),
+                            ),
+                            Text(
+                              'M5050',
+                              style: TextStyle(
+                                fontSize: 17,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
                         padding: const EdgeInsets.all(6),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'PRC',
+                              'Heat No.',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
+                            ),
+                            Text(
+                              'M5050',
+                              style: TextStyle(
+                                fontSize: 17,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'PRC No.',
+                              style: TextStyle(
+                                fontSize: 17,
+                              ),
                             ),
                             Text(
                               'IB0998',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
                             ),
                           ],
                         ),
@@ -565,50 +776,16 @@ class _Overview2State extends State<Overview2> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Heat No',
+                              'Die No.',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
                             ),
                             Text(
                               'M5050',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Die No',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'M5050',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Part',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'Box Casting',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
                             ),
                           ],
                         ),
@@ -621,12 +798,14 @@ class _Overview2State extends State<Overview2> {
                             Text(
                               'Grade',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
                             ),
                             Text(
                               '1',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
                             ),
                           ],
                         ),
@@ -637,32 +816,16 @@ class _Overview2State extends State<Overview2> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Customer',
+                              'Quantity',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              'JSK',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'PRC Quantity',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
                             ),
                             Text(
                               '4',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
                             ),
                           ],
                         ),
@@ -673,14 +836,56 @@ class _Overview2State extends State<Overview2> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Weight',
+                              'Total Quantity',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
                             ),
                             Text(
-                              '100',
+                              '22',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Total Weight',
+                              style: TextStyle(
+                                fontSize: 17,
+                              ),
+                            ),
+                            Text(
+                              '22',
+                              style: TextStyle(
+                                fontSize: 17,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Start Date & Time',
+                              style: TextStyle(
+                                fontSize: 17,
+                              ),
+                            ),
+                            Text(
+                              '22-02-2023-10:54:AM',
+                              style: TextStyle(
+                                fontSize: 17,
+                              ),
                             ),
                           ],
                         ),
@@ -693,33 +898,350 @@ class _Overview2State extends State<Overview2> {
                             Text(
                               'Supervisor',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
                             ),
                             Text(
                               'JSK',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
+                                fontSize: 17,
+                              ),
                             ),
                           ],
                         ),
                       ),
+                      Divider(
+                        height: 1,
+                        // thickness: 0.2,
+                        // color: Colors.black,
+                      ),
                       Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Room Temp. & Humidity',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                            Text(
-                              '28',
-                              style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w900),
-                            ),
-                          ],
+                        padding: EdgeInsets.all(6),
+                        child: Container(
+                          child: Text(
+                            'Pending',
+                            style: TextStyle(
+                                fontSize: 19, fontWeight: FontWeight.w900),
+                          ),
                         ),
+                      ),
+                      Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: [
+                          SingleChildScrollView(
+                            child: CarouselSlider(
+                                items: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(9, 9, 9, 0),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Heat No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'M5050',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'PRC No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'IB0998',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Die No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'M5050',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Grade',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                '1',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Quantity',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                '4',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Issue Date & Time',
+                                                  style: TextStyle(
+                                                    fontSize: 17,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.fromLTRB(
+                                                          30, 0, 0, 0),
+                                                  child: Text(
+                                                    '22-02-2023-10:54:AM',
+                                                    style: TextStyle(
+                                                      fontSize: 17,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(9, 9, 9, 0),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Heat No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'M5051',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'PRC No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'IB0998',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Die No.',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                'M5050',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Grade',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                '1',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                'Quantity',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                              Text(
+                                                '4',
+                                                style: TextStyle(
+                                                  fontSize: 17,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Issue Date & Time',
+                                                  style: TextStyle(
+                                                    fontSize: 17,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.fromLTRB(
+                                                          30, 0, 0, 0),
+                                                  child: Text(
+                                                    '22-02-2023-10:54:AM',
+                                                    style: TextStyle(
+                                                      fontSize: 17,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                                carouselController: buttonCarouselController,
+                                options: CarouselOptions(
+                                  height: 250,
+                                  // aspectRatio: 1.1,
+                                  viewportFraction: 0.95,
+                                  initialPage: 0,
+                                  enableInfiniteScroll: true,
+                                  autoPlay: true,
+                                  autoPlayInterval: Duration(seconds: 4),
+                                  autoPlayAnimationDuration:
+                                      Duration(milliseconds: 700),
+                                  autoPlayCurve: Curves.fastOutSlowIn,
+                                  enlargeCenterPage: true,
+                                  // enlargeFactor: 0.3,
+                                  scrollDirection: Axis.horizontal,
+                                  onPageChanged: (index, reason) {
+                                    setState(() {
+                                      activeIndexSub = index;
+                                    });
+                                  },
+                                )),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(15),
+                            child: AnimatedSmoothIndicator(
+                              activeIndex: activeIndexSub,
+                              count: 2,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
