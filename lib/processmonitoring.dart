@@ -4,6 +4,7 @@ import 'package:udhyog4/pm_heattreatment.dart';
 import 'package:udhyog4/pm_melting&pouring.dart';
 import 'package:udhyog4/pm_pattern.dart';
 import 'package:udhyog4/pm_shell.dart';
+import 'package:udhyog4/pm_testing&inspection.dart';
 
 class ProcessMonitoring extends StatefulWidget {
   const ProcessMonitoring({super.key});
@@ -340,6 +341,15 @@ class _ProcessMonitoringState extends State<ProcessMonitoring> {
                   Column(
                     children: [
                       InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  PmTestingInspection(),
+                            ),
+                          );
+                        },
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
                           radius: 48,
