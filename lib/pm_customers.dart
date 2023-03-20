@@ -346,10 +346,10 @@ class _Overview2State extends State<Overview2> {
                                                   fontWeight: FontWeight.w900),
                                             ),
                                             Text(
-                                              '31-07-2021,17-02-2022',
+                                              '31-07-2021',
                                               style: TextStyle(
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.w900),
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w800),
                                             ),
                                           ],
                                         ),

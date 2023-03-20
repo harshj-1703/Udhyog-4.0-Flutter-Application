@@ -197,15 +197,16 @@ class _Overview2State extends State<Overview2> {
                     //       fontSize: 17, ),
                     // ),
                     Stack(
+                      alignment: Alignment.topCenter,
                       children: [
                         SizedBox(
-                          height: 320,
-                          width: 370,
+                          height: 250,
+                          width: 325,
                           child:
                               Image.asset('assets/images/Machines/htfurn1.png'),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(268, 127, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(168, 95, 0, 0),
                           child: Text(
                             'data',
                             textAlign: TextAlign.center,
@@ -214,7 +215,7 @@ class _Overview2State extends State<Overview2> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(310, 127, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(235, 95, 0, 0),
                           child: Text(
                             'data',
                             textAlign: TextAlign.center,
@@ -223,7 +224,7 @@ class _Overview2State extends State<Overview2> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(317, 190, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(247, 151, 0, 0),
                           child: Text(
                             'data',
                             textAlign: TextAlign.center,
@@ -639,15 +640,16 @@ class _Overview2State extends State<Overview2> {
                     //       fontSize: 17, ),
                     // ),
                     Stack(
+                      alignment: Alignment.topCenter,
                       children: [
                         SizedBox(
-                          height: 320,
-                          width: 370,
+                          height: 230,
+                          width: 315,
                           child:
                               Image.asset('assets/images/Machines/htfurn2.png'),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(308, 110, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(227, 71, 0, 0),
                           child: Text(
                             'data',
                             textAlign: TextAlign.center,
@@ -656,7 +658,7 @@ class _Overview2State extends State<Overview2> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(286, 161, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(259, 115, 0, 0),
                           child: Text(
                             'data',
                             textAlign: TextAlign.center,
@@ -665,7 +667,7 @@ class _Overview2State extends State<Overview2> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(326, 161, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(193, 115, 0, 0),
                           child: Text(
                             'data',
                             textAlign: TextAlign.center,

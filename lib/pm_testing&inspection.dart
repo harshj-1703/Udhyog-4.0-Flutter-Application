@@ -100,7 +100,7 @@ class _PmTestingInspectionState extends State<PmTestingInspection> {
                           children: [
                             SizedBox(
                               height: 60,
-                              width: 165,
+                              width: 145,
                               child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     padding: EdgeInsets.all(0),
@@ -123,7 +123,7 @@ class _PmTestingInspectionState extends State<PmTestingInspection> {
                             ),
                             SizedBox(
                               height: 60,
-                              width: 165,
+                              width: 145,
                               child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     padding: EdgeInsets.all(0),
